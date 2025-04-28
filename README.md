@@ -10,7 +10,7 @@ This is web application that allows user to find their desired drinks and the st
 To get your project up and running locally, follow these steps:
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/projectname.git
+   git clone https://github.com/femiliaartwork/AlcoholApp.git
 
 2. Navigate to the project directory:
    cd filepath/projectname
