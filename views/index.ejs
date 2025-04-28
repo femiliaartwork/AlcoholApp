@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Find Your Drink</h1>
+  
+    <form action="/search" method="GET" class="d-flex justify-content-center mb-5">
+      <input type="text" name="s" class="form-control w-50 me-2" placeholder="Enter alcohol name..." required>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  
+    <% if (alcohol && alcohol.length > 0) { %>
+      <div class="row">
+        <% alcohol.forEach(drink => { %>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="<%= drink.image %>" class="card-img-top" alt="<%= drink.name %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= drink.name %></h5>
+                <p class="card-text"><%= drink.description %></p>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    <% } %>
+  
+    <% if (error) { %>
+      <div class="alert alert-danger text-center mt-4">
+        <%= error %>
+      </div>
+    <% } %>
+  
+  </div>
+
+<%- include("partials/footer") %>
